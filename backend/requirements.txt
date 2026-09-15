@@ -1,0 +1,5 @@
+oracledb
+python-dotenv
+requests
+tzdata
+Flask

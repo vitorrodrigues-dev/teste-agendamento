@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agendamento — Clínica</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Agendamento de Consultas</h1>
+      <p class="subtitle">Escolha uma data para ver os horários disponíveis.</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <label for="date-input">Data da consulta</label>
+        <div class="date-row">
+          <input type="date" id="date-input" />
+          <button id="check-availability-btn" type="button" class="btn-primary">Ver horários</button>
+        </div>
+      </section>
+
+      <p id="loading" class="loading" hidden>Carregando...</p>
+
+      <section class="card" id="feedback-section" hidden>
+        <p id="feedback-message"></p>
+      </section>
+
+      <section class="card" id="slots-section" hidden>
+        <h2>Horários disponíveis</h2>
+        <div id="slots-grid" class="slots-grid"></div>
+
+        <div id="booked-list-wrapper" hidden>
+          <h3>Já agendados nesta data</h3>
+          <ul id="booked-list" class="booked-list"></ul>
+        </div>
+      </section>
+
+      <section class="card" id="form-section" hidden>
+        <h2>Confirmar agendamento</h2>
+        <p class="form-summary">
+          Data: <strong id="form-date"></strong> — Horário: <strong id="form-time"></strong>
+        </p>
+
+        <label for="patient-name">Nome do paciente *</label>
+        <input type="text" id="patient-name" placeholder="Nome completo" />
+
+        <label for="patient-phone">Telefone (opcional)</label>
+        <input type="tel" id="patient-phone" placeholder="11999999999" />
+
+        <p id="form-error" class="error-text" hidden></p>
+
+        <div class="form-actions">
+          <button id="cancel-btn" type="button" class="btn-secondary">Cancelar</button>
+          <button id="confirm-btn" type="button" class="btn-primary" disabled>Confirmar agendamento</button>
+        </div>
+      </section>
+
+      <section class="card" id="result-section" hidden>
+        <p id="result-message"></p>
+        <button id="new-appointment-btn" type="button" class="btn-secondary" hidden>Agendar outro horário</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
